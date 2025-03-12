@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Actividad.belongsTo(models.Itinerario, {
+        foreignKey: 'itinerarioId',
+        as: 'itinerario'
+      })
     }
   }
   Actividad.init({
@@ -24,6 +28,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Actividad',
+    tableName: 'actividades'
   });
   return Actividad;
 };

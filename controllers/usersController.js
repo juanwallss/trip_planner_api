@@ -1,9 +1,8 @@
-const db = require('../models');
-const User = db.User;
+const { Usuario } = require('../models');
 
 exports.getAllUsers = async (req, res) => {
   try {
-    const users = await User.findAll();
+    const users = await Usuario.findAll();
     res.status(200).json(users);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -12,9 +11,9 @@ exports.getAllUsers = async (req, res) => {
 
 exports.getUserById = async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
+    const user = await Usuario.findByPk(req.params.id);
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.status(404).json({ message: 'Usuario not found' });
     }
     res.status(200).json(user);
   } catch (error) {
@@ -24,7 +23,7 @@ exports.getUserById = async (req, res) => {
 
 exports.createUser = async (req, res) => {
   try {
-    const user = await User.create(req.body);
+    const user = await Usuario.create(req.body);
     res.status(201).json(user);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -33,14 +32,14 @@ exports.createUser = async (req, res) => {
 
 exports.updateUser = async (req, res) => {
   try {
-    const [updated] = await User.update(req.body, {
+    const [updated] = await Usuario.update(req.body, {
       where: { id: req.params.id },
     });
     if (updated) {
-      const updatedUser = await User.findByPk(req.params.id);
+      const updatedUser = await Usuario.findByPk(req.params.id);
       return res.status(200).json(updatedUser);
     }
-    throw new Error('User not found');
+    throw new Error('Usuario not found');
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -48,13 +47,13 @@ exports.updateUser = async (req, res) => {
 
 exports.deleteUser = async (req, res) => {
   try {
-    const deleted = await User.destroy({
+    const deleted = await Usuario.destroy({
       where: { id: req.params.id },
     });
     if (deleted) {
       return res.status(204).send();
     }
-    throw new Error('User not found');
+    throw new Error('Usuario not found');
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

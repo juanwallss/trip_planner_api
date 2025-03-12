@@ -11,6 +11,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Itinerario.belongsTo(models.Usuario, {
+        foreignKey: 'usuarioId',
+        as: 'usuario'
+      })
+
+      Itinerario.hasMany(models.Actividad, {
+        foreignKey: 'itinerarioId',
+        as: 'actividades',
+        onDelete: 'CASCADE'
+      })
     }
   }
   Itinerario.init({
