@@ -29,7 +29,9 @@ module.exports = (sequelize, DataTypes) => {
     descripcion: DataTypes.STRING,
     destino: DataTypes.STRING,
     fechaInicio: DataTypes.DATE,
-    fechaFin: DataTypes.DATE
+    fechaFin: DataTypes.DATE,
+    latitud: DataTypes.FLOAT,
+    longitud: DataTypes.FLOAT
   }, {
     sequelize,
     modelName: 'Itinerario',

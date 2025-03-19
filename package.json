@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "freshMigrate": "npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate",
+    "freshMigrate": "npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "migrate": "npx sequelize-cli db:migrate",
     "serve": "nodemon index.js"
   },

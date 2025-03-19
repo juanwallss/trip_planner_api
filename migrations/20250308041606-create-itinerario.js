@@ -27,6 +27,12 @@ module.exports = {
       fechaFin: {
         type: Sequelize.DATE
       },
+      latitud: {
+        type: Sequelize.FLOAT
+      },
+      longitud: {
+        type: Sequelize.FLOAT
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

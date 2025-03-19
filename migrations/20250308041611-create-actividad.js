@@ -24,12 +24,6 @@ module.exports = {
       hora: {
         type: Sequelize.TIME
       },
-      latitud: {
-        type: Sequelize.FLOAT
-      },
-      longitud: {
-        type: Sequelize.FLOAT
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

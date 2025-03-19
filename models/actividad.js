@@ -23,8 +23,6 @@ module.exports = (sequelize, DataTypes) => {
     descripcion: DataTypes.TEXT,
     fecha: DataTypes.DATE,
     hora: DataTypes.TIME,
-    latitud: DataTypes.FLOAT,
-    longitud: DataTypes.FLOAT
   }, {
     sequelize,
     modelName: 'Actividad',
