@@ -25,7 +25,7 @@ module.exports = {
 
     await queryInterface.bulkInsert('itinerarios', [{
       usuarioId: userId,
-      nombre: 'Viaje a la playa',
+      titulo: 'Viaje a la playa',
       descripcion: 'Viaje familiar con todos',
       destino: 'cancun',
       fechaInicio: new Date(),
@@ -36,7 +36,7 @@ module.exports = {
       updatedAt: new Date(),
     }, {
       usuarioId: userId,
-      nombre: 'Viaje a nieve',
+      titulo: 'Viaje a nieve',
       descripcion: 'Viaje familiar con todos',
       destino: 'canada',
       fechaInicio: new Date(),
@@ -47,7 +47,7 @@ module.exports = {
       updatedAt: new Date(),
     }, {
       usuarioId: userId2,
-      nombre: 'Viaje a Roma',
+      titulo: 'Viaje a Roma',
       descripcion: 'Viaje familiar con todos',
       destino: 'ROMA',
       fechaInicio: new Date(),

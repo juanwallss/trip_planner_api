@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Itinerario.init({
     usuarioId: DataTypes.UUID,
-    nombre: DataTypes.STRING(50),
+    titulo: DataTypes.STRING(50),
     descripcion: DataTypes.STRING,
     destino: DataTypes.STRING,
     fechaInicio: DataTypes.DATE,

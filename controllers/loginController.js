@@ -53,8 +53,9 @@ exports.login = async (req, res) => {
         // Guardar refreshToken en la base de datos
         await user.update({ refreshToken });
 
-        res.json({ token, refreshToken });
+        res.status(200).json({id: user.id, nombre: user.nombre, token, refreshToken });
     } catch (error) {
+        console.log(error)
         res.status(500).json({ message: 'Error en el servidor', error });
     }
 }

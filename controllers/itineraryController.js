@@ -33,10 +33,10 @@ exports.getSingleItinerary = async (req, res) => {
 exports.createItinerary = async (req, res) => {
   try {
     const userId = req.params.userId
-    const { nombre, descripcion, destino, fechaInicio, fechaFin } = req.body
+    const { titulo, descripcion, destino, fechaInicio, fechaFin } = req.body
     const nuevoItinerario = await Itinerario.create({
       usuarioId: userId,
-      nombre,
+      titulo,
       descripcion,
       destino,
       fechaInicio,
@@ -52,7 +52,7 @@ exports.modifyItinerary = async (req, res) => {
   try {
     const userId = req.params.userId
     const itineraryId = req.params.id
-    const { nombre, descripcion, destino, fechaInicio, fechaFin } = req.body
+    const { titulo, descripcion, destino, fechaInicio, fechaFin } = req.body
 
     const itinerary = await Itinerario.findOne({ where: { id: itineraryId, usuarioId: userId } })
 
@@ -60,7 +60,7 @@ exports.modifyItinerary = async (req, res) => {
       return res.status(404).json({ message: 'Itinerario no encontrado' })
     }
 
-    await itinerary.update({ nombre, descripcion, destino, fechaInicio, fechaFin })
+    await itinerary.update({ titulo, descripcion, destino, fechaInicio, fechaFin })
     res.status(200).json({ message: 'Itinerario modificado correctamente' })
   } catch (e) {
     return res.status(500).json({ message: e.message })

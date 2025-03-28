@@ -12,7 +12,7 @@ module.exports = {
       usuarioId: {
         type: Sequelize.UUID
       },
-      nombre: {
+      titulo: {
         type: Sequelize.STRING(50)
       },
       descripcion: {
