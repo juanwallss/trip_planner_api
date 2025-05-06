@@ -25,13 +25,13 @@ module.exports = {
 
     await queryInterface.bulkInsert('itinerarios', [{
       usuarioId: userId,
-      titulo: 'Viaje a la playa',
+      titulo: 'Viaje a Maracaibo',
       descripcion: 'Viaje familiar con todos',
-      destino: 'cancun',
+      destino: 'Maracaibo',
       fechaInicio: new Date(),
       fechaFin: new Date(),
-      latitud: 12312.123,
-      longitud: 12312.123,
+      latitud: 10.641,
+      longitud: -71.6074,
       createdAt: new Date(),
       updatedAt: new Date(),
     }, {
@@ -41,8 +41,8 @@ module.exports = {
       destino: 'canada',
       fechaInicio: new Date(),
       fechaFin: new Date(),
-      latitud: 12312.123,
-      longitud: 12312.123,
+      latitud: 10.641,
+      longitud: -71.6074,
       createdAt: new Date(),
       updatedAt: new Date(),
     }, {
@@ -52,8 +52,8 @@ module.exports = {
       destino: 'ROMA',
       fechaInicio: new Date(),
       fechaFin: new Date(),
-      latitud: 12312.123,
-      longitud: 12312.123,
+      latitud: 10.641,
+      longitud: -71.6074,
       createdAt: new Date(),
       updatedAt: new Date(),
     }], {});

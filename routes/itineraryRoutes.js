@@ -6,10 +6,10 @@ require('dotenv').config();
 
 const router = express.Router();
 
-router.get('/:userId', authMiddleware, itineraryController.getAllItineraries);
-router.get('/:userId/:id', authMiddleware, itineraryController.getSingleItinerary);
-router.post('/:userId', authMiddleware, itineraryController.createItinerary);
-router.put('/:userId/:id', authMiddleware, itineraryController.modifyItinerary);
-router.delete('/:userId/:id', authMiddleware, itineraryController.deleteItinerary);
+router.get('/:userId', itineraryController.getAllItineraries);
+router.get('/:userId/:id', itineraryController.getSingleItinerary);
+router.post('/:userId', itineraryController.createItinerary);
+router.put('/:id',  itineraryController.modifyItinerary);
+router.delete('/:id', itineraryController.deleteItinerary);
 
 module.exports = router;

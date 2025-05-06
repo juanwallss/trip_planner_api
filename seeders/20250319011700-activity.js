@@ -15,7 +15,7 @@ module.exports = {
 
 
     const itinerary1 = await queryInterface.sequelize.query(
-      `SELECT id FROM itinerarios WHERE destino = 'cancun'
+      `SELECT id FROM itinerarios WHERE destino = 'maracaibo'
     `
     );
     const itinerary2 = await queryInterface.sequelize.query(
